@@ -1,0 +1,74 @@
+﻿@model Examen.ViewModels.searchstring1
+
+@{
+    ViewData["Title"] = "Index";
+    var i = 0;
+}
+
+<h1 class="text-center">USER</h1>
+<br />
+<p class="float-right">
+    <a class="btn border-info" asp-action="Create">Create New</a>
+</p>
+<form class="float-left" asp-controller="user" asp-action="Index" method="get">
+    <p>
+        Nombre del producto:
+        <input type="text" asp-for="searchstring" />
+        <input type="submit" value="Buscar" />
+    </p>
+    <select asp-for="buscarselect" asp-items="Model.Ciudades">
+        <option value="">Todas las categorías</option>
+    </select>
+    <br />
+</form>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuarios[0].nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuarios[0].ci_ruc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuarios[0].id_ciudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuarios[0].arm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuarios[0].uci)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Usuarios) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ci_ruc)
+            </td>
+            <td>
+                @ViewBag.ciudades[i]
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.arm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.uci)
+            </td>
+            <td>
+                <a class="btn border-info"  asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a class="btn border-info"  asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a class="btn border-info"  asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+    i++;
+}
+    </tbody>
+</table>

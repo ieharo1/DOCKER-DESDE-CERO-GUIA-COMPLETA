@@ -1,0 +1,55 @@
+﻿@model Examen.ViewModels.searchstring1
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">CIUDAD</h1>
+<br />
+<p class="float-right">
+    <a  class="btn border-info" asp-action="Create">Create New</a>
+</p>
+<form class="float-left" asp-controller="ciudad" asp-action="Index">
+    <p>
+        Nombre de la Ciudad:
+        <input type="text" asp-for="searchstring" />
+        <input type="submit" value="Buscar" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CiudadesVM[0].nombre_ciudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CiudadesVM[0].latitud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CiudadesVM[0].longitud)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CiudadesVM)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_ciudad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.latitud)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.longitud)
+                </td>
+                <td>
+                    <a class="btn border-info" asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a class="btn border-info" asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a class="btn border-info" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
