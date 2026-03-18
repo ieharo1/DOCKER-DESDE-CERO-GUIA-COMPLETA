@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprende Docker desde cero con nuestra guía completa. Tutoriales, ejemplos prácticos y ejercicios.">
+    <meta name="author" content="Isaac Esteban Haro Torres">
+    <title>🐳 Docker Desde Cero - Guía Completa</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">🐳 Docker Desde Cero</a>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#temas">Temas</a></li>
+                    <li><a href="#contenido">Contenido</a></li>
+                    <li><a href="#ejemplos">Ejemplos</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>🐳 Docker Desde Cero - Guía Completa</h1>
+                <p class="hero-subtitle">Aprende Docker desde los fundamentos hasta conceptos avanzados</p>
+                <blockquote class="hero-quote">
+                    "Docker ha revolucionado la forma en que desarrollamos, desplegamos y ejecutamos aplicaciones."
+                </blockquote>
+                <a href="#temas" class="btn btn-primary">Explorar Temas</a>
+            </div>
+        </section>
+
+        <section id="temas" class="topics">
+            <div class="container">
+                <h2>📖 Temas del Curso</h2>
+                <p class="topics-intro">Haz clic en cualquier tema para ver el contenido detallado</p>
+                
+                <div class="topics-grid">
+                    <!-- Módulo 1 -->
+                    <div class="topic-card" data-topic="topic1">
+                        <div class="topic-header">
+                            <span class="topic-icon">📌</span>
+                            <h3>Módulo 1: Fundamentos</h3>
+                        </div>
+                        <ul class="topic-list">
+                            <li><a href="#tema1-1">Introducción a Docker</a></li>
+                            <li><a href="#tema1-2">Instalación y configuración</a></li>
+                            <li><a href="#tema1-3">Conceptos básicos</a></li>
+                            <li><a href="#tema1-4">Imágenes y contenedores</a></li>
+                        </ul>
+                        <a href="#tema1-1" class="btn-topic">Ver tema →</a>
+                    </div>
+
+                    <!-- Módulo 2 -->
+                    <div class="topic-card" data-topic="topic2">
+                        <div class="topic-header">
+                            <span class="topic-icon">⚙️</span>
+                            <h3>Módulo 2: Intermedio</h3>
+                        </div>
+                        <ul class="topic-list">
+                            <li><a href="#tema2-1">Dockerfile personalizado</a></li>
+                            <li><a href="#tema2-2">Volúmenes y persistencia</a></li>
+                            <li><a href="#tema2-3">Redes en Docker</a></li>
+                            <li><a href="#tema2-4">Buenas prácticas</a></li>
+                        </ul>
+                        <a href="#tema2-1" class="btn-topic">Ver tema →</a>
+                    </div>
+
+                    <!-- Módulo 3 -->
+                    <div class="topic-card" data-topic="topic3">
+                        <div class="topic-header">
+                            <span class="topic-icon">🚀</span>
+                            <h3>Módulo 3: Avanzado</h3>
+                        </div>
+                        <ul class="topic-list">
+                            <li><a href="#tema3-1">Docker Compose</a></li>
+                            <li><a href="#tema3-2">Orquestación de servicios</a></li>
+                            <li><a href="#tema3-3">CI/CD con Docker</a></li>
+                            <li><a href="#tema3-4">Microservicios</a></li>
+                        </ul>
+                        <a href="#tema3-1" class="btn-topic">Ver tema →</a>
+                    </div>
+                </div>
+
+                <!-- Contenido Detallado de Temas -->
+                <div class="topic-content" id="topic-content">
+                    <!-- Tema 1-1 -->
+                    <div class="content-detail" id="tema1-1">
+                        <h3>📌 Introducción a Docker</h3>
+                        <div class="content-body">
+                            <p><strong>¿Qué es Docker?</strong> Docker es una plataforma de código abierto que permite crear, desplegar y ejecutar aplicaciones en contenedores. Los contenedores son entornos ligeros y portables que incluyen todo lo necesario para ejecutar una aplicación.</p>
+                            
+                            <h4>Ventajas de Docker:</h4>
+                            <ul>
+                                <li><strong>Portabilidad:</strong> Funciona igual en cualquier entorno</li>
+                                <li><strong>Isolamiento:</strong> Cada aplicación corre en su propio entorno</li>
+                                <li><strong>Eficiencia:</strong> Comparte el kernel del sistema operativo</li>
+                                <li><strong>Escalabilidad:</strong> Fácil de escalar horizontalmente</li>
+                            </ul>
+
+                            <h4>Historia de Docker:</h4>
+                            <p>Docker fue lanzado en 2013 por Solomon Hykes y rápidamente se convirtió en el estándar de la industria para la containerización de aplicaciones.</p>
+
+                            <div class="info-box">
+                                <strong>💡 Dato curioso:</strong> Docker está construido sobre tecnologías de contenedores de Linux que existen desde hace más de 10 años, como cgroups y namespaces.
+                            </div>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 1-2 -->
+                    <div class="content-detail" id="tema1-2">
+                        <h3>🔧 Instalación y Configuración</h3>
+                        <div class="content-body">
+                            <h4>En Windows:</h4>
+                            <ol>
+                                <li>Descarga Docker Desktop desde <a href="https://docker.com" target="_blank">docker.com</a></li>
+                                <li>Ejecuta el instalador y sigue las instrucciones</li>
+                                <li>Reinicia tu computadora si es necesario</li>
+                                <li>Abre Docker Desktop y verifica la instalación</li>
+                            </ol>
+
+                            <h4>En macOS:</h4>
+                            <ol>
+                                <li>Descarga Docker Desktop para Mac</li>
+                                <li>Arrastra Docker a la carpeta Aplicaciones</li>
+                                <li>Abre Docker desde Aplicaciones</li>
+                            </ol>
+
+                            <h4>En Linux (Ubuntu/Debian):</h4>
+                            <pre><code># Actualizar paquetes
+sudo apt-get update
+
+# Instalar dependencias
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+
+# Agregar repositorio oficial
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Instalar Docker
+sudo apt-get install docker-ce docker-ce-cli containerd.io</code></pre>
+
+                            <h4>Verificar instalación:</h4>
+                            <pre><code>docker --version
+docker run hello-world</code></pre>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 1-3 -->
+                    <div class="content-detail" id="tema1-3">
+                        <h3>📚 Conceptos Básicos</h3>
+                        <div class="content-body">
+                            <h4>Contenedor vs Máquina Virtual:</h4>
+                            <table class="info-table">
+                                <tr>
+                                    <th>Característica</th>
+                                    <th>Contenedor</th>
+                                    <th>Máquina Virtual</th>
+                                </tr>
+                                <tr>
+                                    <td>Tamaño</td>
+                                    <td>Megabytes</td>
+                                    <td>Gigabytes</td>
+                                </tr>
+                                <tr>
+                                    <td>Inicio</td>
+                                    <td>Segundos</td>
+                                    <td>Minutos</td>
+                                </tr>
+                                <tr>
+                                    <td>Kernel</td>
+                                    <td>Compartido</td>
+                                    <td>Dedicado</td>
+                                </tr>
+                            </table>
+
+                            <h4>Componentes principales:</h4>
+                            <ul>
+                                <li><strong>Dockerfile:</strong> Archivo de texto con instrucciones para construir una imagen</li>
+                                <li><strong>Imagen:</strong> Plantilla de solo lectura usada para crear contenedores</li>
+                                <li><strong>Contenedor:</strong> Instancia ejecutable de una imagen</li>
+                                <li><strong>Docker Hub:</strong> Repositorio público de imágenes</li>
+                            </ul>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 1-4 -->
+                    <div class="content-detail" id="tema1-4">
+                        <h3>📦 Imágenes y Contenedores</h3>
+                        <div class="content-body">
+                            <h4>Trabajando con Imágenes:</h4>
+                            <pre><code># Buscar una imagen
+docker search nginx
+
+# Descargar una imagen
+docker pull nginx:latest
+
+# Listar imágenes locales
+docker images
+
+# Eliminar una imagen
+docker rmi nginx:latest</code></pre>
+
+                            <h4>Trabajando con Contenedores:</h4>
+                            <pre><code># Crear y ejecutar un contenedor
+docker run -d -p 80:80 --name mi-web nginx
+
+# Listar contenedores en ejecución
+docker ps
+
+# Listar todos los contenedores
+docker ps -a
+
+# Detener un contenedor
+docker stop mi-web
+
+# Iniciar un contenedor detenido
+docker start mi-web
+
+# Eliminar un contenedor
+docker rm mi-web</code></pre>
+
+                            <div class="info-box">
+                                <strong>💡 Tip:</strong> Usa <code>docker run -it ubuntu bash</code> para ejecutar un contenedor interactivo.
+                            </div>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 2-1 -->
+                    <div class="content-detail" id="tema2-1">
+                        <h3>📝 Dockerfile Personalizado</h3>
+                        <div class="content-body">
+                            <h4>Estructura de un Dockerfile:</h4>
+                            <pre><code># Imagen base
+FROM node:18-alpine
+
+# Directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos
+COPY package*.json ./
+
+# Instalar dependencias
+RUN npm install
+
+# Copiar el resto del código
+COPY . .
+
+# Exponer puerto
+EXPOSE 3000
+
+# Comando de inicio
+CMD ["npm", "start"]</code></pre>
+
+                            <h4>Instrucciones comunes:</h4>
+                            <ul>
+                                <li><strong>FROM:</strong> Especifica la imagen base</li>
+                                <li><strong>RUN:</strong> Ejecuta comandos durante el build</li>
+                                <li><strong>COPY:</strong> Copia archivos al contenedor</li>
+                                <li><strong>ENV:</strong> Establece variables de entorno</li>
+                                <li><strong>EXPOSE:</strong> Expone un puerto</li>
+                                <li><strong>CMD:</strong> Comando por defecto al iniciar</li>
+                            </ul>
+
+                            <h4>Construir y ejecutar:</h4>
+                            <pre><code># Construir la imagen
+docker build -t mi-app .
+
+# Ejecutar el contenedor
+docker run -p 3000:3000 mi-app</code></pre>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 2-2 -->
+                    <div class="content-detail" id="tema2-2">
+                        <h3>💾 Volúmenes y Persistencia</h3>
+                        <div class="content-body">
+                            <h4>Tipos de volúmenes:</h4>
+                            
+                            <h5>1. Volúmenes con nombre:</h5>
+                            <pre><code># Crear volumen
+docker volume create mi-volumen
+
+# Usar volumen en contenedor
+docker run -d -v mi-volumen:/data nginx</code></pre>
+
+                            <h5>2. Bind mounts:</h5>
+                            <pre><code># Montar directorio local
+docker run -d -v /ruta/local:/ruta/contenedor nginx</code></pre>
+
+                            <h5>3. Volúmenes en Docker Compose:</h5>
+                            <pre><code>version: '3.8'
+services:
+  db:
+    image: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:</code></pre>
+
+                            <div class="info-box">
+                                <strong>⚠️ Importante:</strong> Los datos en contenedores son efímeros. Usa volúmenes para persistencia.
+                            </div>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 2-3 -->
+                    <div class="content-detail" id="tema2-3">
+                        <h3>🌐 Redes en Docker</h3>
+                        <div class="content-body">
+                            <h4>Tipos de redes:</h4>
+                            <ul>
+                                <li><strong>bridge:</strong> Red por defecto para contenedores</li>
+                                <li><strong>host:</strong> El contenedor usa la red del host</li>
+                                <li><strong>none:</strong> Sin conectividad de red</li>
+                                <li><strong>overlay:</strong> Para comunicación entre hosts</li>
+                            </ul>
+
+                            <h4>Comandos de red:</h4>
+                            <pre><code># Crear red
+docker network create mi-red
+
+# Listar redes
+docker network ls
+
+# Conectar contenedor a red
+docker network connect mi-red mi-contenedor
+
+# Inspeccionar red
+docker network inspect mi-red</code></pre>
+
+                            <h4>Ejemplo de uso:</h4>
+                            <pre><code># Crear red para aplicación
+docker network create app-network
+
+# Ejecutar contenedores en la misma red
+docker run -d --name web --network app-network nginx
+docker run -d --name api --network app-network mi-api</code></pre>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 2-4 -->
+                    <div class="content-detail" id="tema2-4">
+                        <h3>✅ Buenas Prácticas</h3>
+                        <div class="content-body">
+                            <h4>Optimización de imágenes:</h4>
+                            <ul>
+                                <li>Usa imágenes base pequeñas (Alpine)</li>
+                                <li>Minimiza el número de capas</li>
+                                <li>Usa .dockerignore</li>
+                                <li>Combina comandos RUN</li>
+                            </ul>
+
+                            <h4>Seguridad:</h4>
+                            <ul>
+                                <li>No ejecutes como root</li>
+                                <li>Escanea imágenes con <code>docker scan</code></li>
+                                <li>Usa secretos para datos sensibles</li>
+                                <li>Mantén imágenes actualizadas</li>
+                            </ul>
+
+                            <h4>Multi-stage builds:</h4>
+                            <pre><code># Build stage
+FROM node:18 AS builder
+WORKDIR /app
+COPY . .
+RUN npm run build
+
+# Production stage
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html</code></pre>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 3-1 -->
+                    <div class="content-detail" id="tema3-1">
+                        <h3>🐙 Docker Compose</h3>
+                        <div class="content-body">
+                            <h4>¿Qué es Docker Compose?</h4>
+                            <p>Docker Compose es una herramienta para definir y ejecutar aplicaciones multi-contenedor usando archivos YAML.</p>
+
+                            <h4>Ejemplo completo:</h4>
+                            <pre><code>version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      - NODE_ENV=production
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: miapp
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:</code></pre>
+
+                            <h4>Comandos esenciales:</h4>
+                            <pre><code># Iniciar servicios
+docker-compose up -d
+
+# Ver logs
+docker-compose logs -f
+
+# Detener servicios
+docker-compose down
+
+# Reconstruir
+docker-compose up -d --build</code></pre>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 3-2 -->
+                    <div class="content-detail" id="tema3-2">
+                        <h3>🔄 Orquestación de Servicios</h3>
+                        <div class="content-body">
+                            <h4>Health Checks:</h4>
+                            <pre><code>services:
+  web:
+    image: nginx
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s</code></pre>
+
+                            <h4>Restart Policies:</h4>
+                            <ul>
+                                <li><code>no</code> - No reiniciar automáticamente</li>
+                                <li><code>on-failure</code> - Reiniciar solo si falla</li>
+                                <li><code>always</code> - Siempre reiniciar</li>
+                                <li><code>unless-stopped</code> - Reiniciar a menos que se detenga</li>
+                            </ul>
+
+                            <h4>Resource Limits:</h4>
+                            <pre><code>services:
+  app:
+    image: mi-app
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M</code></pre>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 3-3 -->
+                    <div class="content-detail" id="tema3-3">
+                        <h3>🔧 CI/CD con Docker</h3>
+                        <div class="content-body">
+                            <h4>GitHub Actions ejemplo:</h4>
+                            <pre><code>name: Docker CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: user/app:latest</code></pre>
+
+                            <h4>Beneficios:</h4>
+                            <ul>
+                                <li>Builds reproducibles</li>
+                                <li>Entornos consistentes</li>
+                                <li>Deploy rápido y confiable</li>
+                            </ul>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+
+                    <!-- Tema 3-4 -->
+                    <div class="content-detail" id="tema3-4">
+                        <h3>🏗️ Microservicios</h3>
+                        <div class="content-body">
+                            <h4>Arquitectura de microservicios con Docker:</h4>
+                            <pre><code>version: '3.8'
+
+services:
+  api-gateway:
+    image: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - user-service
+      - order-service
+      - product-service
+
+  user-service:
+    build: ./services/user
+    environment:
+      - DB_HOST=user-db
+
+  order-service:
+    build: ./services/order
+    environment:
+      - DB_HOST=order-db
+
+  product-service:
+    build: ./services/product
+
+  user-db:
+    image: postgres
+
+  order-db:
+    image: postgres
+
+  product-db:
+    image: mongodb</code></pre>
+
+                            <h4>Ventajas:</h4>
+                            <ul>
+                                <li>Despliegue independiente</li>
+                                <li>Escalabilidad por servicio</li>
+                                <li>Tolerancia a fallos</li>
+                            </ul>
+                        </div>
+                        <a href="#temas" class="btn btn-back">← Volver a temas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contenido" class="content">
+            <div class="container">
+                <h2>📚 Contenido del Curso</h2>
+                
+                <div class="modules">
+                    <div class="module">
+                        <h3>Módulo 1: Fundamentos</h3>
+                        <ul>
+                            <li>Introducción a Docker</li>
+                            <li>Instalación y configuración</li>
+                            <li>Conceptos básicos</li>
+                            <li>Imágenes y contenedores</li>
+                        </ul>
+                        <a href="#temas" class="btn-module">Ir a temas →</a>
+                    </div>
+
+                    <div class="module">
+                        <h3>Módulo 2: Intermedio</h3>
+                        <ul>
+                            <li>Dockerfile personalizado</li>
+                            <li>Volúmenes y persistencia</li>
+                            <li>Redes en Docker</li>
+                            <li>Buenas prácticas</li>
+                        </ul>
+                        <a href="#temas" class="btn-module">Ir a temas →</a>
+                    </div>
+
+                    <div class="module">
+                        <h3>Módulo 3: Avanzado</h3>
+                        <ul>
+                            <li>Docker Compose</li>
+                            <li>Orquestación de servicios</li>
+                            <li>CI/CD con Docker</li>
+                            <li>Microservicios</li>
+                        </ul>
+                        <a href="#temas" class="btn-module">Ir a temas →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejemplos" class="examples">
+            <div class="container">
+                <h2>📝 Ejemplos Rápidos</h2>
+                
+                <div class="code-block">
+                    <h3>Comandos Básicos</h3>
+                    <pre><code class="language-bash"># Ver versión de Docker
+docker --version
+
+# Descargar imagen
+docker pull nginx:latest
+
+# Ejecutar contenedor
+docker run -d -p 80:80 nginx
+
+# Listar contenedores
+docker ps
+
+# Detener contenedor
+docker stop &lt;container_id&gt;</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <h3>Dockerfile Ejemplo</h3>
+                    <pre><code class="language-dockerfile">FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <h3>Docker Compose</h3>
+                    <pre><code class="language-yaml">version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="recursos" class="resources">
+            <div class="container">
+                <h2>📖 Recursos Adicionales</h2>
+                
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>Documentación Oficial</h4>
+                        <ul>
+                            <li><a href="https://docs.docker.com/" target="_blank">Docker Documentation</a></li>
+                            <li><a href="https://hub.docker.com/" target="_blank">Docker Hub</a></li>
+                            <li><a href="https://docs.docker.com/engine/reference/builder/" target="_blank">Dockerfile Reference</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>Herramientas</h4>
+                        <ul>
+                            <li>Docker Desktop</li>
+                            <li>Portainer</li>
+                            <li>Watchtower</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>Comunidades</h4>
+                        <ul>
+                            <li><a href="https://www.docker.com/community/" target="_blank">Docker Community</a></li>
+                            <li>Stack Overflow - Docker</li>
+                            <li>Reddit r/docker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2>👨‍💻 Desarrollado por Isaac Esteban Haro Torres</h2>
+                <p class="contact-title">Ingeniero en Sistemas · Full Stack · Automatización · Data</p>
+                
+                <div class="contact-info">
+                    <p>📧 Email: <a href="mailto:zackharo1@gmail.com">zackharo1@gmail.com</a></p>
+                    <p>📱 WhatsApp: 098805517</p>
+                    <p>💻 GitHub: <a href="https://github.com/ieharo1" target="_blank">github.com/ieharo1</a></p>
+                    <p>🌐 Portafolio: <a href="https://ieharo1.github.io/portafolio-isaac.haro/" target="_blank">ieharo1.github.io/portafolio-isaac.haro/</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Isaac Esteban Haro Torres - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
